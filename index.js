@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const util = require('util');
 
 
 function createManager() {
@@ -77,10 +76,11 @@ function addEngineer() {
             type: "input",
             name: "github",
             message: "Please enter your GitHub user name."
-        }
+        },
     ])
     .then(engineer => {
         console.log("New Engineer Created");
+    createTeam()
     })
 };
 
@@ -109,6 +109,7 @@ function addIntern() {
     ])
     .then(engineer => {
         console.log("New Intern Created");
+    createTeam()
     })
 }
 
