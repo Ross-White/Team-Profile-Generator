@@ -1,6 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+// const Employee = require('./lib/employee');
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
 
+const teamMembers = [];
 
 function createManager() {
     inquirer.prompt([
@@ -25,8 +30,8 @@ function createManager() {
             message: "Please enter your office number."
         }])
         .then(answers => {
-            console.log("Manager Created");
-        
+            const manager = new Manager(answers.manName, answers.id, answers.email, answers.officeNumber);
+            teamMembers.push(manager);
         createTeam();
         });
 }   
@@ -50,7 +55,7 @@ function createTeam() {
                     addIntern();
                     break;
                 default:
-                    buildTeam();
+                    console.log(teamMembers);
             }
         });            
 }
@@ -59,7 +64,7 @@ function addEngineer() {
     inquirer.prompt([
         {
             type: "input",
-            name: "name",
+            name: "engName",
             message: "What is your name?"
         },
         {
@@ -78,9 +83,10 @@ function addEngineer() {
             message: "Please enter your GitHub user name."
         },
     ])
-    .then(engineer => {
-        console.log("New Engineer Created");
-    createTeam()
+    .then(answers => {
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+        teamMembers.push(engineer);    
+        createTeam()
     })
 };
 
@@ -88,7 +94,7 @@ function addIntern() {
     inquirer.prompt([
         {
             type: "input",
-            name: "name",
+            name: "internName",
             message: "What is your name?"
         },
         {
@@ -107,9 +113,10 @@ function addIntern() {
             message: "Please enter the name of your school."
         }
     ])
-    .then(engineer => {
-        console.log("New Intern Created");
-    createTeam()
+    .then(answers => {
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+        teamMembers.push(intern);    
+        createTeam()
     })
 }
 
