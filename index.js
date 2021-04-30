@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const Employee = require('./lib/employee');
+const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
@@ -84,7 +84,7 @@ function addEngineer() {
         },
     ])
     .then(answers => {
-        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+        const engineer = new Engineer(answers.engName, answers.id, answers.email, answers.github);
         teamMembers.push(engineer);    
         createTeam()
     })
@@ -114,7 +114,7 @@ function addIntern() {
         }
     ])
     .then(answers => {
-        const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+        const intern = new Intern(answers.internName, answers.id, answers.email, answers.school);
         teamMembers.push(intern);    
         createTeam()
     })
