@@ -15,7 +15,7 @@ const CSS = `:root {
 
 .card {
     margin: 2%;
-    width: 15vw;
+    width: fit-content;
 }`
 
 module.exports = CSS;
