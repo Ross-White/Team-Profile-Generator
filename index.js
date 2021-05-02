@@ -1,15 +1,17 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const util = require('util');
 const path = require('path');
 
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
+const CSS = require('./src/styles');
 
 const teamMembers = [];
+
 const outputPath = path.resolve(__dirname, "output");
 const filePath = path.join(outputPath, "index.html");
+const cssFilePath = path.join(outputPath, "styles.css");
 
 function createManager() {
     inquirer.prompt([
@@ -132,14 +134,20 @@ function createFile(teamMembers) {
         fs.mkdirSync(outputPath);
       }
       fs.writeFileSync(filePath, renderHTML(teamMembers), "utf-8");
-
+      fs.writeFileSync(cssFilePath, CSS);
 }
 
 function renderHTML() {
     const cardHTML = [];
-    cardHTML.push(teamMembers.filter(teamMember => teamMember.getRole() === 'Manager').map(manager => manager.createManagerCard()));
-    cardHTML.push(teamMembers.filter(teamMember => teamMember.getRole() === 'Engineer').map(engineer => engineer.createEngineerCard()));
-    cardHTML.push(teamMembers.filter(teamMember => teamMember.getRole() === 'Intern').map(intern => intern.createInternCard()));
+    cardHTML.push(teamMembers
+        .filter(teamMember => teamMember.getRole() === 'Manager')
+        .map(manager => manager.createManagerCard()));
+    cardHTML.push(teamMembers
+        .filter(teamMember => teamMember.getRole() === 'Engineer')
+        .map(engineer => engineer.createEngineerCard()));
+    cardHTML.push(teamMembers
+        .filter(teamMember => teamMember.getRole() === 'Intern')
+        .map(intern => intern.createInternCard()));
     return `
     <!DOCTYPE html>
     <html lang="en">
