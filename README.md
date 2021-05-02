@@ -27,10 +27,5 @@
   * [Tests Passing Video](https://drive.google.com/file/d/1RqPcQYP4haCXavMW2PWIyAEV1fr8r9-F/view)
   * [Github](https://github.com/Ross-White/Team-Profile-Generator)
 
-  ## License 
-  
-    This project is licensed under the MIT license.
 
-  
-# Team-Profile-Generator
 
