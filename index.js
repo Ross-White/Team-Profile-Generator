@@ -61,7 +61,6 @@ function createTeam() {
                     addIntern();
                     break;
                 default:
-                    console.log(teamMembers);
                     createFile(teamMembers);
             }
         });            

@@ -23,9 +23,9 @@
   * Email- <rosswhite@outlook.com>
 
   ## Application
-  ![Video](https://drive.google.com/file/d/1SVFfhxv2UJzOH1bCES-Q_FlNK66oSxC0/view)
-  ![Video](https://drive.google.com/file/d/1RqPcQYP4haCXavMW2PWIyAEV1fr8r9-F/view)
-  ![Github](https://github.com/Ross-White/Team-Profile-Generator)
+  * [Walkthrough Video](https://drive.google.com/file/d/1SVFfhxv2UJzOH1bCES-Q_FlNK66oSxC0/view)
+  * [Tests Passing Video](https://drive.google.com/file/d/1RqPcQYP4haCXavMW2PWIyAEV1fr8r9-F/view)
+  * [Github](https://github.com/Ross-White/Team-Profile-Generator)
 
   ## License 
   
